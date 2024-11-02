@@ -1,0 +1,200 @@
+
+.wrapper{
+  border-radius: 6px;
+ border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  padding-left:40px;
+  padding-bottom:40px;
+  margin: 0 auto;
+  width: 75%;
+  background: lightblue;
+
+   overflow-x:hidden;
+
+}  
+
+.table-wrapper{
+ 
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+   position: relative;
+  left:2%;
+  width: 95%;
+  background: #fff;
+  padding: 34px;
+}  
+
+
+.form-error {
+  width: 30%; 
+  color:red;
+  font-size:12px;
+  font-weight:bold;
+  position:relative;
+  left:10px;
+}
+
+.wrapper h2{
+  font-weight: 600;
+  color: #333;
+    position: relative;
+  font-size: 22px;
+
+}
+
+.wrapper form{
+  margin-top: 30px;
+}
+.wrapper form .input-box{
+  height: 52px;
+  margin: 18px 0;
+}
+
+.student-form {
+    width:90%;
+     padding-left:15%;
+    margin: 0 auto;
+
+}
+
+form .input-box input{
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  height: 100%;
+  font-size: 17px;
+
+  border-radius: 6px;
+  transition: all 0.3s ease;
+   width: 70%;
+  outline: none;
+  padding: 0 15px;
+ 
+}
+
+
+.acd-year{
+ font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  height: 60px;
+  font-size: 17px;
+
+  border-radius: 6px;
+  transition: all 0.3s ease;
+   width: 30%;
+  outline: none;
+  padding: 0 15px;
+}
+
+.select-box{
+
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 50px;
+  width: 75%;
+
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+
+.select-box-50{
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 60px;
+  width: 37%;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+
+
+
+.input-box input:focus,
+.input-box input:valid{
+  border-color: #4070f4;
+}
+
+form .policy{
+  align-items: center;
+  display:flex;
+  color:red;
+}
+
+form h3{
+
+  color: #707070;
+  font-size: 14px;
+    font-weight: 500;
+  margin-left: 10px;
+
+}
+
+.button-box {
+    position:relative;
+    left:20%;
+}
+
+.save-btn{
+  position:inline-block;
+  background: #4070f4;
+  cursor: pointer;
+  margin-left:10px;
+  text-align:center;
+   color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  padding:10px;
+  width:100px;
+  height:40px;
+}
+
+.search-btn {
+   position:relative;
+  
+   background: #4070f4;
+  cursor: pointer;
+   color: #fff;
+   width:100px;
+   height:40px;
+   text-decoration:none;
+   padding:10px;
+   border-radius: 6px;
+  letter-spacing: 1px;
+  border: none;
+
+}
+
+.save-btn:hover{
+  background: #0e4bf1;
+}
+
+form .text h3{
+ width: 100%;
+ text-align: center;
+ color: #333;
+}
+
+form .text h3 a{
+  text-decoration: none;
+  color: #4070f4;
+ 
+}
+
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+
+
+.hr {
+    color: blue;
+}
