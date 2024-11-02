@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+                         initial-scale=1.0">
+    <title>Food Inventory Management</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1 class="heading">Food Inventory Application</h1>
+        <h3 class="title">User Login/Register</h3>
+    </header>
+
+    <div class="container">
+        <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Signin</button>
+            <button class="signup">Signup</button>
+        </div>
+        <div class="form-section">
+            <div class="login-box">
+                <br>
+                {{message}}
+                    <br>
+                <center><h1>Enter your details</h1>
+
+
+                <form class="login-box" method="post" action ="{% url 'login' %}">
+                    {%csrf_token%}
+                    <input name="user_name" type="text"
+                           class="name ele"
+                           placeholder="Enter username" required>
+                    <input name="password" type="password"
+                           class="password ele"
+                           placeholder="Enter password" required>
+
+                    <input class="clkbtn" type="submit" value="Login">
+                </form>
+            </div>
+            <div class="signup-box">
+
+                <form class="login-box" method="post" action ="{% url 'register' %}">
+                    {%csrf_token%}
+                <input name="first_name" type="text"
+                       class="name ele"
+                       placeholder="Please enter first name" required>
+                <input name="last_name" type="text"
+                       class="name ele"
+                       placeholder="Please enter last name" required>
+                <input name="user_name" type="text"
+                       class="name ele"
+                       placeholder="Please enter user name" required>
+                <input name="email_id" type="email"
+                       class="email ele"
+                       placeholder="john@email.com" required>
+                <input name="password" type="password"
+                       class="password ele"
+                       placeholder="password" required>
+                <input name="cpassword" type="password"
+                       class="password ele"
+                       placeholder="Re-enter password" required>
+                <input class="clkbtn" type="submit" value="Signup">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/login.js"></script>
+</body>
+</html>

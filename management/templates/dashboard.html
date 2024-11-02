@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+    <title>Food Inventory</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .row.content {height: 550px; color:red; font-weight:bold;}
+    .sidenav {
+      background-color: #f1f1f1;
+
+      height: 100%;
+    }
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;}
+    }
+  </style>
+<body>
+
+<div class="header-div" style="background-image: url('{% static 'header.png' %}');  background-repeat: no-repeat;background-attachment: fixed;
+  background-size: contain;">
+
+    <nav>
+        <ul>
+            <li><a class="bactive" href="/adminIndex">Home</a></li>
+            <li><a href="/addFoodItem">Add Food Item</a></li>
+            <li><a href="/viewItems">View Food Items</a></li>
+            <li><a href="/expiryChart">Expiry Statistics</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="container-fluid" style="position:relative; margin:auto; text-align:center;">
+  <div class="row content">
+    <div class="col-sm-9">
+      <div class="well">
+        <h4>Dashboard</h4>
+        <p>Welcome {{request.session.user_name}}</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Vegetables</h4>
+            <p>{{num_vegetables}}</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Fruits</h4>
+            <p>{{num_fruits}}</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Grains</h4>
+            <p>{{num_grains}}</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Dairy</h4>
+            <p>{{num_dairy}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="footer">
+      <p class="copyright">&#169;Copyright 2024,Food Inventory System</p>
+  </div>
+</body>
+</html>

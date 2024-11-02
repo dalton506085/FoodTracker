@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+    <title>Food Inventory Management</title>
+</head>
+<body>
+
+<div class="header-div" style="background-image: url('{% static 'header.png' %}');  background-repeat: no-repeat;background-attachment: fixed;
+  background-size: contain;">
+
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Home</a></li>
+            <li><a class="bactive" href="/addFoodItem">Add Food Item</a></li>
+            <li><a href="/viewItems">View Food Items</a></li>
+            <li><a href="/expiryChart">Expiry Statistics</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</div>
+    <div class="wrapper">
+    <center><h1 class="page-header" >Add New Food Item</h1> </center>
+    <br>
+        <center>{{message}} </center>
+    <br>
+    <form class="student-form" method="post"  action ="{% url 'saveItem' %}">
+         {%csrf_token%}
+             <input type="hidden" name="item_id" value="{{foodItem.item_id}}" >
+             <b class="medium">Food Item Name: </b>
+                <div class="input-box">
+                    <input type="text" name="item_name"  placeholder="e.g. Apple or Milk" value="{{foodItem.name}}" required>
+                </div>
+             <br><br>
+
+             <b class="medium">Food Category: </b>
+                <div class="selectbox">
+                <select id="food_type" name="food_type" class="select-box">
+                <option value="vegetables" {% if foodItem.type == 'vegetables' %} selected {%endif%}>Vegetables</option>
+                <option value="fruits" {% if foodItem.type == 'fruits' %} selected {%endif%} >Fruits</option>
+                <option value="grains" {% if foodItem.type == 'grains' %} selected {%endif%}>Grains</option>
+                <option value="dairy" {% if foodItem.type == 'dairy' %} selected {%endif%}>Dairy</option>
+            </select>
+                </div>
+             <br><br>
+
+             <b class="medium">Item Quantity: </b>
+                <div class="input-box">
+                    <input type="text" name="item_qty"  placeholder="e.g. 10" value="{{foodItem.quantity}}" required>
+                </div>
+             <br><br>
+
+        <b class="medium">Expiry Date: </b>
+                <div class="input-box">
+                    <input type="date" name="expiry_date"  value="{{foodItem.expiryDate | date:'Y-m-d'}}" required>
+                </div>
+             <br><br>
+
+        <b class="medium">Recipe Name: </b>
+        <br><br>
+                <div class="input-box">
+                    <input type="text" name="recipe_name"  placeholder="e.g. Vegetable Salad, Fruit Salad " value="{{foodItem.recipe_name}}" required>
+                </div>
+        <br><br>
+
+        <div class="button-box">
+            <input class="save-btn" type="submit" name="reset" value="Reset">
+            <input class="save-btn" type="submit" name="save" value="Save">
+        </div>
+    </form>
+  </div>
+
+  <div class="footer">
+      <p class="copyright">&#169;Copyright 2024,Food Inventory System</p>
+  </div>
+</body>
+</html>
